@@ -5,9 +5,7 @@ USE imdb;
  Further in this segment, you will take a look at 'movies' and 'genre' tables.*/
 
 
-
 -- Segment 1:
-
 
 
 -- Q1. Find the total number of rows in each table of the schema?
@@ -153,7 +151,6 @@ LIMIT 1;
 -- "Drama" genre has the highest number of movies produced(i.e. 4285).
 
 
-
 /* So, based on the insight that you just drew, RSVP Movies should focus on the ‘Drama’ genre. 
 But wait, it is too early to decide. A movie can belong to two or more genres. 
 So, let’s find out the count of movies that belong to only one genre.*/
@@ -174,7 +171,6 @@ FROM movies_single_genre;
 
 -- ANSWER:-
 -- There are 3289 Movies belongs to single Genre
-
 
 
 /* There are more than three thousand movies which has only one genre associated with them.
@@ -207,7 +203,6 @@ GROUP BY g.genre;
 
 -- ANSWER:-
 -- 'Action' has the highest average duration followed by Romace, Crime, Drama and Fantasy
-
 
 
 /* Now you know, movies of genre 'Drama' (produced highest in number in 2019) has the average duration of 106.77 mins.
@@ -244,7 +239,6 @@ WHERE LOWER(genre)='thriller';
 -- In terms of number of movies produced, the rank of the ‘thriller’ genre of movies among all the genres  is 3
 
 
-
 /*Thriller movies is in top 3 among all genres in terms of number of movies
  In the previous segment, you analysed the movies and genres tables. 
  In this segment, you will analyse the ratings table as well.
@@ -252,9 +246,7 @@ To start with lets get the min and max values of different columns in the table*
 
 
 
-
 -- Segment 2:
-
 
 
 
@@ -284,7 +276,6 @@ FROM
 -- max_total_votes --> 725138
 -- min_median_rating --> 1
 -- max_median_rating --> 10
-
 
 
 /* So, the minimum and maximum values in each column of the ratings table are in the expected range. 
@@ -386,7 +377,6 @@ WHERE t1.prod_company_rank=1;
 -- Dream Warrior Pictures and National Theatre Live have produced highest number of hit movies(avg_rating > 8).
 
 
-
 -- It's ok if RANK() or DENSE_RANK() is used too
 -- Answer can be Dream Warrior Pictures or National Theatre Live or both
 
@@ -421,7 +411,6 @@ ORDER BY movie_count DESC;
 -- Top 3 genres are Drama, Comedy and Action during March 2017 in the USA and had more than 1,000 votes
 
 
-
 -- Lets try to analyse with a unique problem statement.
 -- Q15. Find movies of each genre that start with the word ‘The’ and which have an average rating > 8?
 /* Output format:
@@ -452,7 +441,6 @@ ORDER BY genre, avg_rating DESC;
 -- The Brighton Miracle (9.5), The Colour of Darkness (9.1) and The Blue Elephant (8.8)
 
 
-
 -- You should also try your hand at median rating and check whether the ‘median rating’ column gives any significant insights.
 -- Q16. Of the movies released between 1 April 2018 and 1 April 2019, how many were given a median rating of 8?
 -- Type your code below:
@@ -466,7 +454,6 @@ WHERE
 
 -- ANSWER:-
 -- 361 movies were released between 1 April 2018 and 1 April 2019 having median rating of 8
-
 
 
 -- Once again, try to solve the problem given below.
@@ -499,10 +486,8 @@ FROM
 -- Yes, German movies get more votes than Italian movies
 
 
-
 /* Now that you have analysed the movies, genres and ratings tables, let us now analyse another table, the names table. 
 Let’s begin by searching for null values in the tables.*/
-
 
 
 
@@ -529,7 +514,6 @@ FROM
 
 -- ANSWER:-
 -- Columns with null values are as follow: height, date_of_birth and known_for_movies
-
 
 
 /* There are no Null value in the column 'name'.
@@ -606,11 +590,9 @@ LIMIT 3;
 -- Top 3 directors are as follows
 -- James Mangold, Anthony Russo and Soubin Shahir
 
-
 -- NOTE:-
 -- Here Joe Russo and Soubin Shahir both has directed same number of movies with top 3 genre having rating>8 (i.e. 3) 
 -- so both can be correct answer.
-
 
 
 /* James Mangold can be hired as the director for RSVP's next project. Do you remeber his movies, 'Logan' and 'The Wolverine'. 
@@ -671,7 +653,6 @@ WHERE prod_comp_rank <=3;
 
 -- ANSWER:-
 -- TOP 3 production companies are Marvel Studios, Twentieth Century Fox and Warner Bros.
-
 
 
 /*Yes Marvel Studios rules the movie world.
@@ -761,7 +742,6 @@ WHERE actress_rank<=5;
 -- Taapsee Pannu, Kriti Sanon, Divya Dutta, Shraddha Kapoor and Kriti Kharbanda
 
 
-
 /*Now let us divide all the thriller movies in the following categories and find out their numbers.*/
 
 /* Q24. Consider thriller movies having at least 25,000 votes. Classify them according to their average ratings in
@@ -805,8 +785,6 @@ ORDER BY r.avg_rating DESC;
 -- Joker, Andhadhun, Contratiempo and Ah-ga-ssi are superhit movies From Thriller Genre
 
 
-
-
 /* Until now, you have analysed various tables of the data set. 
 Now, you will perform some tasks that will give you a broader understanding of the data in this segment.*/
 
@@ -837,15 +815,6 @@ INNER JOIN movie m ON m.id=g.movie_id
 GROUP BY g.genre
 ORDER BY g.genre;
 
-
-
-
-
-
--- Round is good to have and not a must have; Same thing applies to sorting
-
-
--- Let us find top 5 movies of each year with top 3 genres.
 
 -- Q26. Which are the five highest-grossing movies of each year that belong to the top three genres? 
 -- (Note: The top 3 genres would have the most number of movies.)
@@ -932,7 +901,6 @@ WHERE prod_comp_rank <=2;
 
 
 
-
 -- Q28. Who are the top 3 actresses based on the number of Super Hit movies (Superhit movie: average rating of movie > 8) in 'drama' genre?
 
 -- Note: Consider only superhit movies to calculate the actress average ratings.
@@ -978,7 +946,6 @@ LIMIT 3;
 
 -- ANSWER:-
 -- Top 3 actresses are Sangeetha Bhat, Adriana Matoshi and Fatmire Sahiti
-
 
 
 /* Q29. Get the following details for top 9 directors (based on number of movies)
